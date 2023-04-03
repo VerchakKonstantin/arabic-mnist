@@ -106,11 +106,3 @@ def plot_history_train(path_log: str) -> None:
     plt.legend(["loss", "val_loss"])
     plt.show()
     return None
-
-
-# x_train, y_train, x_test, y_test = get_dataset()
-# model = create_model()
-# model.summary()
-# train_model(model, x_train, y_train, x_test, y_test, False)
-
-plot_history_train('model_training.log')
