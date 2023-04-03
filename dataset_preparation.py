@@ -4,10 +4,17 @@ import config
 
 
 def get_dataset(path_train_x: str = config.path_train_x, path_train_y: str = config.path_train_y,
-                path_test_x: str = config.path_test_x, path_test_y: str = config.path_test_y):
-    arabic_characters = ['alef', 'beh', 'teh', 'theh', 'jeem', 'hah', 'khah', 'dal', 'thal',
-                         'reh', 'zain', 'seen', 'sheen', 'sad', 'dad', 'tah', 'zah', 'ain',
-                         'ghain', 'feh', 'qaf', 'kaf', 'lam', 'meem', 'noon', 'heh', 'waw', 'yeh']
+                path_test_x: str = config.path_test_x, path_test_y: str = config.path_test_y,
+                arabic_characters: list = config.arabic_characters):
+    """
+    function for load and preparation dataset
+    :param path_train_x: path to train csv images
+    :param path_train_y: path to train csv labels
+    :param path_test_x: path to test csv images
+    :param path_test_y: path to test scv labels
+    :param arabic_characters: decryption of labels
+    :return: arrays of dataset
+    """
 
     x_train = pd.read_csv(path_train_x, header=None).to_numpy()
     y_train = pd.read_csv(path_train_y, header=None).to_numpy() - 1
